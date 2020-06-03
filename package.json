@@ -1,0 +1,53 @@
+{
+  "name": "hnreader",
+  "version": "1.0.0",
+  "description": "A React in TS project to read HackerNews",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.ts* --fix",
+    "start": "parcel ./src/index.html --port 1334 --open",
+    "stubs": "node ./stubby/index.js",
+    "build": "parcel build ./src/index.html --public-url '/items'",
+    "test": "npm run lint && jest --coverage",
+    "test-dev": "jest"
+  },
+  "keywords": [
+    "parcel",
+    "react",
+    "typescript"
+  ],
+  "author": "John Hardy <“jh@lagado.com”> (https://www.lagado.com)",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.1",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@types/fetch-mock": "^7.3.2",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.41",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/styled-components": "^4.4.3",
+    "@types/webpack-env": "^1.15.2",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "jest": "^24.9.0",
+    "node-fetch": "^2.6.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-html-externals": "^0.1.2",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.9.3"
+  }
+}
