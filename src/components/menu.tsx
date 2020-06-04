@@ -13,21 +13,51 @@ const BaseMenu = ({ openClass: activeClass, className }: MenuProps) => {
     <div className={`${className} Menu ${activeClass}`} id="menu">
       <div className="pure-menu">
         <a className="pure-menu-heading" href="#">
-          Hacker News
+          Forms etc
         </a>
         <ul className="pure-menu-list">
           <li className="pure-menu-item">
-            <NavLink activeClassName="selected" className="pure-menu-link" to="/top-ten">
+          <NavLink
+              activeClassName="selected"
+              className="pure-menu-link"
+              to="/formik-form"
+            >
+              Formik Form
+            </NavLink>
+          </li>
+          <li className="pure-menu-item">
+            <NavLink
+              activeClassName="selected"
+              className="pure-menu-link"
+              to="/simple-form"
+            >
+              Simple Form
+            </NavLink>
+          </li>
+          <li className="pure-menu-item">
+            <NavLink
+              activeClassName="selected"
+              className="pure-menu-link"
+              to="/top-ten"
+            >
               Top Ten
             </NavLink>
           </li>
           <li className="pure-menu-item">
-            <NavLink activeClassName="selected" className="pure-menu-link" to="/first-ten">
+            <NavLink
+              activeClassName="selected"
+              className="pure-menu-link"
+              to="/first-ten"
+            >
               First Top Ten
             </NavLink>
           </li>
           <li className="pure-menu-item">
-            <NavLink activeClassName="selected" className="pure-menu-link" to="/info">
+            <NavLink
+              activeClassName="selected"
+              className="pure-menu-link"
+              to="/info"
+            >
               Info
             </NavLink>
           </li>

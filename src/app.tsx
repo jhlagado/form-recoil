@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, customTheme } from './styles';
@@ -8,6 +13,8 @@ import { TopTen } from './components/top-ten';
 import { Menu } from './components/menu';
 import { Info } from './components/info';
 import { FirstTen } from './components/first-ten';
+import { SimpleForm } from './components/simple-form';
+import { FormikForm } from './components/formik-form';
 
 export const App: React.FC<any> = () => {
   const [open, setOpen] = useState(false);
@@ -33,12 +40,18 @@ export const App: React.FC<any> = () => {
             <div>
               <Switch>
                 <Route exact path="/">
-                  <Redirect to="/top-ten" />
+                  <Redirect to="/formik-form" />
                 </Route>
-                <Route exact path="/top-ten">
+                <Route exact path="/formik-form">
+                  <FormikForm />
+                </Route>
+                <Route exact path="/simple-form">
+                  <SimpleForm />
+                </Route>
+                <Route path="/top-ten">
                   <TopTen />
                 </Route>
-                <Route exact path="/first-ten">
+                <Route path="/first-ten">
                   <FirstTen />
                 </Route>
                 <Route path="/info">
