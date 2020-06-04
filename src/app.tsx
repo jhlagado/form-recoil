@@ -9,12 +9,13 @@ import {
 
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, customTheme } from './styles';
-import { TopTen } from './components/top-ten';
-import { Menu } from './components/menu';
-import { Info } from './components/info';
+import { TopTen } from './pages/top-ten';
+import { Menu } from './menu';
+import { Info } from './pages/info';
 import { FirstTen } from './components/first-ten';
-import { SimpleForm } from './components/simple-form';
-import { FormikForm } from './components/formik-form';
+import { SimpleForm } from './pages/simple-form';
+import { FormikForm } from './pages/formik-form';
+import { RecoilTodos } from './pages/recoil-todos';
 
 export const App: React.FC<any> = () => {
   const [open, setOpen] = useState(false);
@@ -41,6 +42,9 @@ export const App: React.FC<any> = () => {
               <Switch>
                 <Route exact path="/">
                   <Redirect to="/formik-form" />
+                </Route>
+                <Route exact path="/recoil-todos">
+                  <RecoilTodos />
                 </Route>
                 <Route exact path="/formik-form">
                   <FormikForm />

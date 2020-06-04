@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { TTStoryList } from './tt-story-list';
+import { TTStoryList } from '../components/tt-story-list';
 import { ScrollToTop } from '../utils';
 
 const BaseTopTen = () => {

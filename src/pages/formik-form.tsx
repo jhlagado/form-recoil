@@ -1,11 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {
-  Formik,
-  Form,
-  Field,
-  ErrorMessage,
-} from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { ScrollToTop } from '../utils';
 
 interface FormErrors {
@@ -23,7 +18,12 @@ const BaseFormikForm = () => {
       </div>
       <div className="content">
         <Formik
-          initialValues={{ email: '', password: '', zone: 'ap-southeast-2a', remember: false }}
+          initialValues={{
+            email: '',
+            password: '',
+            zone: 'ap-southeast-2a',
+            remember: false,
+          }}
           validate={values => {
             const errors: FormErrors = {};
             if (!values.email) {
@@ -35,27 +35,22 @@ const BaseFormikForm = () => {
             }
             return errors;
           }}
-          onSubmit={async(values, { setSubmitting }) => {
-            setTimeout(async() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-              const result = await fetch(
-                'http://localhost:2334/v1/demo/stuff',
-                {
-                      method: 'POST',
-                      headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify(values),
-                    });
-                    try {
-                      const data = await result.json();
-                      console.log(data);
-                    } catch (err) {
-                      console.log(err);
-                    }
-            }, 400);
+          onSubmit={async (values, { setSubmitting }) => {
+            setSubmitting(false);
+            const result = await fetch('http://localhost:2334/v1/demo/stuff', {
+              method: 'POST',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(values),
+            });
+            try {
+              const data = await result.json();
+              console.log(data);
+            } catch (err) {
+              console.log(err);
+            }
           }}
         >
           {({ isSubmitting }) => (

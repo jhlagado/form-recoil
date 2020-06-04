@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import styled from 'styled-components';
-import { Stylable } from '../types';
+import { Stylable } from './types';
 import { NavLink } from 'react-router-dom';
 
 interface MenuProps extends Stylable {
@@ -17,7 +17,16 @@ const BaseMenu = ({ openClass: activeClass, className }: MenuProps) => {
         </a>
         <ul className="pure-menu-list">
           <li className="pure-menu-item">
-          <NavLink
+            <NavLink
+              activeClassName="selected"
+              className="pure-menu-link"
+              to="/recoil-todos"
+            >
+              Recoil Todos
+            </NavLink>
+          </li>
+          <li className="pure-menu-item">
+            <NavLink
               activeClassName="selected"
               className="pure-menu-link"
               to="/formik-form"
